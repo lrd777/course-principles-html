@@ -1,0 +1,41 @@
+/* Text is painted by the browser: no wrappers are inserted into lesson content. */
+.annotation-toolbar[hidden],.annotation-toast[hidden],.annotation-dialog [hidden]{display:none!important}
+::highlight(lesson-note-highlight){background-color:#ffe28a;color:#273240}
+::highlight(lesson-note-underline){text-decoration:underline solid #16786b;text-decoration-thickness:2px;text-underline-offset:3px}
+::highlight(lesson-note-comment){background-color:#dfdcff;color:#273240;text-decoration:underline dotted #6754a2;text-decoration-thickness:2px}
+::highlight(lesson-note-focus){background-color:#bcebd8;color:#182e2a}
+html[data-theme="dark"] ::highlight(lesson-note-highlight){background-color:#74601e;color:#fff5cc}
+html[data-theme="dark"] ::highlight(lesson-note-underline){text-decoration-color:#91e3cc}
+html[data-theme="dark"] ::highlight(lesson-note-comment){background-color:#4b426e;color:#f2eaff;text-decoration-color:#cfbcff}
+html[data-theme="dark"] ::highlight(lesson-note-focus){background-color:#2f6157;color:#f0fffa}
+.annotation-open{display:block;margin-top:12px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);font-size:14px;min-height:44px}
+.annotation-sidebar-help{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+.annotation-toolbar{position:fixed;z-index:60;display:flex;flex-wrap:wrap;gap:4px;max-width:calc(100vw - 16px);padding:5px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);box-shadow:0 5px 22px #0002}
+.annotation-toolbar button,.annotation-dialog button{border:1px solid var(--line);border-radius:5px;background:var(--paper);color:var(--ink);padding:6px 11px;font-size:14px;line-height:1.5;min-height:40px}
+.annotation-toolbar button:hover,.annotation-dialog button:hover{border-color:var(--accent);background:var(--soft)}
+.annotation-toolbar button:focus-visible,.annotation-dialog button:focus-visible,.annotation-dialog select:focus-visible,.annotation-dialog textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.annotation-toast{position:fixed;z-index:90;inset:auto 12px 12px auto;width:max-content;max-width:min(580px,calc(100vw - 24px));margin:0;padding:10px 14px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);box-shadow:0 5px 22px #0002;font-size:14px;line-height:1.6;pointer-events:none}
+.annotation-dialog{width:min(680px,calc(100vw - 24px));max-height:calc(100dvh - 24px);max-width:calc(100vw - 24px);padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;box-sizing:border-box}
+.annotation-dialog::backdrop{background:#101c2b66}
+.annotation-dialog-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+.annotation-dialog .annotation-dialog-header h2{margin:0;padding:0;border:0;font-size:22px;line-height:1.4}
+.annotation-dialog .annotation-help{margin:10px 0;color:var(--muted);font-size:14px;line-height:1.65}
+.annotation-storage-status{margin:10px 0;padding:10px 12px;border-radius:5px;background:var(--soft);font-size:13px;line-height:1.6}
+.annotation-storage-status[data-warning="true"]{background:var(--warm)}
+.annotation-dialog-live{margin:10px 0;padding:10px 12px;border:1px solid var(--line);border-radius:5px;font-size:14px;line-height:1.6}
+.annotation-file-actions,.annotation-editor-actions,.annotation-item-actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.annotation-editor{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:7px;background:var(--code)}
+.annotation-editor h3{margin:0 0 10px;font-size:17px}
+.annotation-editor blockquote,.annotation-list blockquote{margin:10px 0;padding:0 0 0 12px;border-left:3px solid var(--accent);font-size:14px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}
+.annotation-editor label{display:block;margin:10px 0 4px;font-size:14px;font-weight:600}
+.annotation-editor select,.annotation-editor textarea{width:100%;max-width:100%;border:1px solid var(--line);border-radius:5px;background:var(--paper);color:var(--ink);padding:8px;font:inherit;font-size:15px;line-height:1.6}
+.annotation-editor textarea{resize:vertical;min-height:90px}
+#annotation-editor-error{margin:8px 0;color:var(--ink);font-size:14px}
+.annotation-list{list-style:none;padding:0;margin:16px 0 0}
+.annotation-list>li{margin:12px 0;padding:14px 0;border-top:1px solid var(--line)}
+.annotation-item-meta{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.annotation-item-note{white-space:pre-wrap;margin:10px 0;font-size:15px;line-height:1.7;overflow-wrap:anywhere}
+.annotation-item-unlocated{margin:8px 0;padding:8px 10px;background:var(--warm);font-size:13px;line-height:1.6;border-radius:4px}
+.annotation-dialog button:disabled{cursor:default;opacity:.55}
+@media(max-width:440px){.annotation-dialog{padding:16px;max-height:calc(100dvh - 16px)}.annotation-editor{padding:12px}.annotation-toolbar button,.annotation-dialog button{min-height:44px}.annotation-toast{font-size:13px}.annotation-dialog-header{gap:8px}}
+@media print{.annotation-open,.annotation-sidebar-help,.annotation-toolbar,.annotation-toast,.annotation-dialog{display:none!important}}

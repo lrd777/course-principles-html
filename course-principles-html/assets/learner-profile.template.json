@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "updated_on": null,
+  "preferences": {
+    "language": "zh-CN",
+    "learning_goal": "本科课程的深入理解与问题分析",
+    "scope": "覆盖本次提供的材料，仅补充必需前置与紧密关联知识",
+    "delivery": "单个 HTML，公式渲染允许联网",
+    "presentation": "简洁学术阅读风格，常规制作细节沿用模板",
+    "clarification": "影响范围、理解或结论的不确定必须询问",
+    "teaching_mode": "完整系统的教师讲授稿；学生基础和困惑只调节详略与侧重，不省略课程主干",
+    "algorithm_teaching": "原伪代码、符号说明、步骤解释与完整例子保持可见；综合比较在相关方法讲完之后",
+    "emphasis": "统一标明定义、关键步骤或结论、成立条件和易错点",
+    "annotations": "正文文字高亮、下划线和评注，本地保存并可导出备份"
+  },
+  "background": {},
+  "knowledge_records": [],
+  "open_questions": [],
+  "course_history": []
+}

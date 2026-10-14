@@ -1,0 +1,4 @@
+interface:
+  display_name: "专业课程文字讲解"
+  short_description: "完整讲解课程概念、推导、伪代码与实例，生成可标注的专业 HTML 讲授稿"
+  default_prompt: "使用 $course-principles-html，按课程逻辑完整讲解我提供的材料，结合基础和困惑调整详略，在指定路径生成可标注的 HTML 课程讲授稿。"

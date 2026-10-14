@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN" data-lesson-id="@@LESSON_ID@@">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>@@TITLE@@</title>
+<style>
+:root{color-scheme:light;--bg:#f4f6f8;--paper:#fff;--ink:#1d2939;--muted:#526171;--line:#d9e1e8;--accent:#17695f;--soft:#eaf5f1;--warm:#fff5e4;--link:#14645c;--code:#edf1f5;--focus:#21786d}
+html[data-theme="dark"]{color-scheme:dark;--bg:#141b23;--paper:#1d2733;--ink:#e5edf5;--muted:#afbfce;--line:#3b4a5a;--accent:#82d4bc;--soft:#243c39;--warm:#3d3325;--link:#99dfce;--code:#293642;--focus:#a4e7d5}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.85 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;overflow-wrap:anywhere}
+a{color:var(--link);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.skip-link{position:absolute;left:12px;top:-80px;background:var(--paper);padding:12px;z-index:10}.skip-link:focus{top:10px}
+.layout{max-width:1260px;margin:auto;padding:48px 32px 80px;display:grid;grid-template-columns:224px minmax(0,1fr);gap:48px;align-items:start}.sidebar{position:sticky;top:32px;min-width:0}.brand{color:var(--accent);font-size:14px;letter-spacing:.12em;margin:0 0 12px}.toc-box{border-top:2px solid var(--accent);padding-top:12px}.toc-box summary{font-weight:650;cursor:pointer}.toc-box nav{margin-top:12px}.toc-box nav a{display:block;padding:6px 0;font-size:14px;line-height:1.55;text-decoration:none;color:var(--muted)}.toc-box nav a:hover{color:var(--accent)}
+.theme-button{margin-top:24px;padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink);font-size:14px}
+main{min-width:0;background:var(--paper);padding:44px 48px;border-radius:12px;box-shadow:0 12px 40px #14273508}.eyebrow{font-size:13px;color:var(--accent);letter-spacing:.1em;margin:0 0 8px}h1{font-size:clamp(26px,3.1vw,38px);line-height:1.4;letter-spacing:-.02em;margin:0 0 18px}h2{font-size:25px;line-height:1.5;margin:48px 0 20px;padding-top:22px;border-top:1px solid var(--line);scroll-margin-top:24px}h3{font-size:20px;line-height:1.5;margin:30px 0 12px}p{margin:12px 0 18px}.scope{color:var(--muted);font-size:15px}.learner-note{font-size:15px;padding:14px 18px;background:var(--soft);border-left:3px solid var(--accent)}.learner-note strong{display:block;color:var(--accent);margin-bottom:3px}
+ul,ol{padding-left:1.4em}li{margin:8px 0}.callout{margin:24px 0;padding:16px 20px;border-left:3px solid var(--accent);background:var(--soft);border-radius:0 6px 6px 0}.callout p:last-child{margin-bottom:0}.callout.condition{background:var(--warm)}.callout.extension{background:var(--code);border-color:var(--muted)}
+code{font-size:.9em;background:var(--code);padding:2px 5px;border-radius:3px}pre{overflow-x:auto;background:var(--code);padding:18px;border-radius:6px;line-height:1.6}pre code{padding:0;background:transparent}.math{font-family:"Times New Roman",serif}.math[data-display="block"]{margin:22px 0;padding:8px 0;overflow-x:auto;overflow-y:hidden;text-align:center}.math-error{color:#a83030;white-space:pre-wrap}.math-status{font-size:14px;background:var(--warm);padding:10px 14px;border-radius:6px}.katex-display{margin:.4em 0}.katex{font-size:1.1em}
+.table-wrap{width:100%;overflow-x:auto;margin:22px 0}table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:10px 12px;vertical-align:top}th{background:var(--code);font-weight:650}
+.symbol-table{margin:20px 0}.symbol-table caption{text-align:left;font-weight:650;color:var(--ink);padding:8px 0}.algorithm figcaption{font-weight:650;color:var(--ink)}.algorithm pre{margin-top:10px}.callout.concept{background:var(--code);border-color:var(--muted)}.callout.concept>strong,.callout.key>strong{color:var(--accent)}.callout.pitfall{background:var(--warm);border-color:#b76b21}.worked-example{margin:24px 0}.pseudocode{white-space:pre}.sidebar{max-height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin}
+figure{margin:28px 0}figure img,figure svg{max-width:100%;height:auto;display:block}figcaption{font-size:14px;color:var(--muted);margin-top:10px}svg text{fill:var(--ink)}
+.derivation{margin:24px 0;padding:13px 18px;border:1px solid var(--line);border-radius:6px}.derivation summary{cursor:pointer;color:var(--accent);font-weight:600}.derivation[open] summary{margin-bottom:14px}
+.quiz{margin:26px 0;padding:22px;background:var(--code);border-radius:8px}.quiz fieldset{border:0;padding:0;margin:0;min-width:0}.quiz legend{font-weight:650;margin-bottom:14px}.quiz button{display:block;width:100%;text-align:left;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0;line-height:1.6}.quiz button[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 3px 0 var(--accent)}.quiz-feedback{margin:16px 0 0;font-size:15px}.source-ref{font-size:.85em}.sources{font-size:14px;color:var(--muted)}.sources li{margin:12px 0}.source-kind{font-weight:650;color:var(--accent)}[hidden]{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr;padding:24px 18px 48px;gap:20px}.sidebar{position:static;max-height:none;overflow:visible}.brand{margin-bottom:8px}.toc-box nav{display:flex;flex-wrap:wrap;gap:4px 18px}.theme-button{margin-top:12px}main{padding:28px}.toc-box nav a{max-width:100%}}
+@media(max-width:440px){body{font-size:16px}.layout{padding:16px 10px 32px}main{padding:24px 18px;border-radius:8px}h2{font-size:22px}.quiz{padding:16px}.callout{padding:14px}.theme-button{min-height:44px}.quiz button{min-height:44px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff;color:#111}.layout{display:block;padding:0;max-width:none}.sidebar,.skip-link,.theme-button{display:none}main{padding:0;box-shadow:none}.quiz button{border-color:#aaa}h2{break-after:avoid}figure,.callout{break-inside:avoid}a{color:inherit}.math[data-display="block"]{overflow:visible}}
+@@ANNOTATION_CSS@@
+</style>
+</head>
+<body>
+<a class="skip-link" href="#course-main">跳到正文</a>
+<div class="layout">
+  <aside class="sidebar" aria-label="课程导航">
+    <p class="brand">原理 · 推导 · 应用</p>
+    <details class="toc-box" open><summary>学习目录</summary><nav aria-label="章节目录">@@TOC@@</nav></details>
+    <button type="button" class="theme-button" id="theme-toggle" aria-pressed="false">切换深色阅读</button>
+  </aside>
+  <main id="course-main">
+    <header><p class="eyebrow">课程讲解</p><h1>@@TITLE@@</h1><p class="scope">@@SCOPE@@</p>
+      @@LEARNER_NOTE@@
+    </header>
+    <p id="math-status" class="math-status" role="status" hidden></p>
+    <article id="lesson-content">@@BODY@@</article>
+    <section aria-labelledby="course-sources"><h2 id="course-sources">材料与补充来源</h2><ol class="sources">@@SOURCES@@</ol></section>
+  </main>
+</div>
+@@ANNOTATION_UI@@
+<script>
+(() => {
+  'use strict';
+  const narrowLayout = matchMedia('(max-width:850px)');
+  const fitContents = () => { document.querySelector('.toc-box').open = !narrowLayout.matches; };
+  fitContents();
+  narrowLayout.addEventListener('change', fitContents);
+  const themeButton = document.getElementById('theme-toggle');
+  const storageKey = 'course-principles-html:theme';
+  function setTheme(dark) {
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    themeButton.setAttribute('aria-pressed', String(dark));
+    themeButton.textContent = dark ? '切换浅色阅读' : '切换深色阅读';
+  }
+  let savedTheme = null;
+  try { savedTheme = localStorage.getItem(storageKey); } catch (_) {}
+  setTheme(savedTheme ? savedTheme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches);
+  themeButton.addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme !== 'dark';
+    setTheme(dark);
+    try { localStorage.setItem(storageKey, dark ? 'dark' : 'light'); } catch (_) {}
+  });
+  document.querySelectorAll('.quiz').forEach(quiz => {
+    const feedback = quiz.querySelector('.quiz-feedback');
+    const buttons = quiz.querySelectorAll('button[data-correct]');
+    if (!feedback || !buttons.length) return;
+    buttons.forEach(button => {
+      button.setAttribute('aria-pressed', 'false');
+      button.addEventListener('click', () => {
+        buttons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+        const prefix = button.dataset.correct === 'true' ? '回答正确。' : '再想一想。';
+        feedback.textContent = prefix + button.dataset.feedback;
+        feedback.hidden = false;
+      });
+    });
+  });
+  const mathInputs = new Map(Array.from(document.querySelectorAll('.math'), element => [element, element.textContent]));
+  let styleFailed = false;
+  window.renderCourseMath = () => {
+    const math = Array.from(mathInputs.keys());
+    const status = document.getElementById('math-status');
+    if (!math.length) return;
+    if (!window.katex || styleFailed) {
+      mathInputs.forEach((latex, element) => { element.textContent = latex; delete element.dataset.rendered; });
+      status.textContent = '公式排版资源未能加载，下面保留原始公式；可联网后重新打开本页。正文与自测仍可使用。';
+      status.hidden = false;
+      return;
+    }
+    let errors = 0;
+    math.forEach(element => {
+      if (element.dataset.rendered === 'true') return;
+      const latex = mathInputs.get(element);
+      try {
+        window.katex.render(latex, element, {displayMode: element.dataset.display === 'block', throwOnError: true, trust: false, strict: 'warn'});
+        element.dataset.rendered = 'true';
+        element.classList.remove('math-error');
+      } catch (_) {
+        element.textContent = latex;
+        element.classList.add('math-error');
+        errors += 1;
+      }
+    });
+    status.hidden = errors === 0;
+    if (errors) status.textContent = '部分公式未能排版，已保留原始公式，请核对公式语法。';
+  };
+  if (mathInputs.size) {
+    // Load math after local interactions are ready; CDN delays cannot block them.
+    const mathStyles = document.createElement('link');
+    mathStyles.rel = 'stylesheet';
+    mathStyles.href = 'https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.css';
+    mathStyles.integrity = 'sha384-3rdsX6e5mueWyoweR9NIVmtEsUkokpBT/0ALqKKIBMr9j4qhHkaIkAcGgsE6uVlp';
+    mathStyles.crossOrigin = 'anonymous';
+    mathStyles.onerror = () => { styleFailed = true; window.renderCourseMath(); };
+    document.head.appendChild(mathStyles);
+    const mathScript = document.createElement('script');
+    mathScript.src = 'https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js';
+    mathScript.integrity = 'sha384-QFFtAGzvvj+bfgCGxXJlNZZR1nXEZgvG8tDLCCY1F19xl20WlfTYgguB4VcNdxYk';
+    mathScript.crossOrigin = 'anonymous';
+    mathScript.onload = window.renderCourseMath;
+    mathScript.onerror = window.renderCourseMath;
+    document.head.appendChild(mathScript);
+  }
+})();
+</script>
+<script>
+@@ANNOTATION_JS@@
+</script>
+</body>
+</html>

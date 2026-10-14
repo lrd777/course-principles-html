@@ -1,0 +1,37 @@
+<!-- Insert this complete fragment before the inline annotations.js script. -->
+<div id="annotation-toolbar" class="annotation-toolbar" role="group" aria-label="所选正文的标注操作" hidden>
+  <button type="button" data-annotation-action="highlight" title="高亮（Alt+Shift+H）">高亮</button>
+  <button type="button" data-annotation-action="underline" title="下划线（Alt+Shift+U）">下划线</button>
+  <button type="button" data-annotation-action="note" title="评注（Alt+Shift+N）">评注</button>
+</div>
+<p id="annotation-live" class="annotation-toast" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+<dialog id="annotation-dialog" class="annotation-dialog" aria-labelledby="annotation-title" aria-describedby="annotation-help">
+  <header class="annotation-dialog-header">
+    <h2 id="annotation-title">正文笔记</h2>
+    <button type="button" id="annotation-close" aria-label="关闭正文笔记">关闭</button>
+  </header>
+  <p id="annotation-help" class="annotation-help">拖选正文可高亮、加下划线或写评注。键盘选中文字后，也可按 Alt+Shift+H / U / N。公式、交互演示和自测区域不参与标注。</p>
+  <p id="annotation-storage-status" class="annotation-storage-status"></p>
+  <p id="annotation-compatibility" class="annotation-storage-status" hidden></p>
+  <p id="annotation-dialog-live" class="annotation-dialog-live" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+  <div class="annotation-file-actions">
+    <button type="button" id="annotation-export">导出 JSON 备份</button>
+    <button type="button" id="annotation-import">导入 JSON 备份</button>
+    <input type="file" id="annotation-import-file" accept=".json,application/json" aria-label="选择正文笔记 JSON 备份" hidden>
+  </div>
+  <section id="annotation-editor" class="annotation-editor" aria-labelledby="annotation-editor-title" hidden>
+    <h3 id="annotation-editor-title">添加评注</h3>
+    <blockquote id="annotation-editor-quote"></blockquote>
+    <label for="annotation-kind">标注样式</label>
+    <select id="annotation-kind"><option value="highlight">高亮</option><option value="underline">下划线</option><option value="note">评注</option></select>
+    <label for="annotation-note">我的评注</label>
+    <textarea id="annotation-note" rows="4" maxlength="10000" placeholder="记下理解、疑问或补充；高亮和下划线可不填写。"></textarea>
+    <div class="annotation-editor-actions">
+      <button type="button" id="annotation-save">保存</button>
+      <button type="button" id="annotation-cancel">取消</button>
+    </div>
+    <p id="annotation-editor-error" role="status" hidden></p>
+  </section>
+  <p id="annotation-empty" class="annotation-help">还没有正文笔记。关闭此窗口后，拖选一段正文开始标注。</p>
+  <ol id="annotation-list" class="annotation-list" aria-label="已保存的正文标注"></ol>
+</dialog>
